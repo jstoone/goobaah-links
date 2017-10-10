@@ -4,16 +4,29 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
+
+            @if(session('link_posted'))
+                @if(session('link_posted') === App\Link::TYPE_GOO)
+                    <div class="alert alert-success">
+                        {{ ucfirst(session('link_posted')) }} lank pasted!
+                    </div>
+                @else
+                    <div class="alert alert-danger">
+                        {{ ucfirst(session('link_posted')) }} lank pasted...
+                    </div>
+                @endif
+            @endif
+
             <div class="panel panel-default">
-                <div class="panel-heading text-center">
+                <div class="panel-heading panel-title text-center">
                     DE STATZ
                 </div>
 
                 <div class="panel-body text-center">
                     @if($linkRating > 50)
-                        <strong>WE ALL GONNA SHIT RAINBOW CAKES!</strong>
+                        <h3>WE ALL GONNA SHIT RAINBOW CAKES!</h3>
                     @else
-                        <strong>WE ALL EATIN' DEPRI-CAKES...</strong>
+                        <h3>WE ALL EATIN' DEPRI-CAKES...</h3>
                     @endif
 
                     <div class="progress">
@@ -27,7 +40,7 @@
 
                     <hr>
 
-                    <h1>Total links: {{ $totalLinks }}</h1>
+                    <h4>Total links: {{ $totalLinks }}</h4>
                 </div>
             </div>
         </div>

@@ -4,13 +4,13 @@
     <input type="hidden" name="type" value="{{ $type }}">
 
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="{{ $slot }}">
+        <input type="text" name="path"  class="form-control" placeholder="{{ $slot }}">
 
         <span class="input-group-btn">
             @if($type === 'goo')
-                <button class="btn btn-success" type="button">YAAS!</button>
+                <button class="btn btn-success" type="submit">YAAS!</button>
             @else
-                <button class="btn btn-danger" type="button">NOEH!</button>
+                <button class="btn btn-danger" type="submit">NOEH!</button>
             @endif
         </span>
     </div>
