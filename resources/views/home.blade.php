@@ -5,18 +5,6 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
 
-            @if(session('link_posted'))
-                @if(session('link_posted') === App\Link::TYPE_GOO)
-                    <div class="alert alert-success">
-                        {{ ucfirst(session('link_posted')) }} lank pasted!
-                    </div>
-                @else
-                    <div class="alert alert-danger">
-                        {{ ucfirst(session('link_posted')) }} lank pasted...
-                    </div>
-                @endif
-            @endif
-
             <div class="panel panel-default">
                 <div class="panel-heading panel-title text-center">
                     DE STATZ
@@ -51,6 +39,19 @@
                     <h4>Total links: {{ $totalLinks }}</h4>
                 </div>
             </div>
+
+            @include('layouts.errors')
+            @if(session('link_posted'))
+                @if(session('link_posted') === App\Link::TYPE_GOO)
+                    <div class="alert alert-success">
+                        {{ ucfirst(session('link_posted')) }} lank pasted!
+                    </div>
+                @else
+                    <div class="alert alert-danger">
+                        {{ ucfirst(session('link_posted')) }} lank pasted...
+                    </div>
+                @endif
+            @endif
         </div>
     </div>
     <div class="row">
