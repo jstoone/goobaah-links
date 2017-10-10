@@ -23,19 +23,27 @@
                 </div>
 
                 <div class="panel-body text-center">
-                    @if($linkRating > 50)
+                    @if($linkRating === 0)
+                        <h3>LET ZE BATTLE BEGIN!</h3>
+                    @elseif($linkRating > 50)
                         <h3>WE ALL GONNA SHIT RAINBOW CAKES!</h3>
                     @else
                         <h3>WE ALL EATIN' DEPRI-CAKES...</h3>
                     @endif
 
                     <div class="progress">
+                        @if($linkRating > 0)
                         <div class="progress-bar progress-bar-danger" style="width: {{ 100 - $linkRating }}%">
                             {{ 100 - $linkRating }}% BAAH
                         </div>
                         <div class="progress-bar progress-bar-success" style="width: {{ $linkRating }}%">
                             {{ $linkRating }}% GOO!
                         </div>
+                        @else
+                        <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 100%">
+                            NEUTRAL ZONES
+                        </div>
+                        @endif
                     </div>
 
                     <hr>
