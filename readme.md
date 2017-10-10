@@ -1,4 +1,5 @@
 ## Goobaah Links
 
-> Good links vs Bad links
-> - _Old news is new goose_
+Initial code time: 1h 55min 13,16 sec
+> Yes I did time it
+> \- @jstoone
