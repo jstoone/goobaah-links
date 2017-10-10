@@ -3,7 +3,7 @@
     <tr>
         <td>
             <strong>
-                L#{{ $link->id }}
+                #{{ $link->id }}
             </strong>
         </td>
         <td>
@@ -15,7 +15,7 @@
     @empty
     <tr class="text-center">
         <td>
-            <h3>NO <strong>GOO</strong> LANKS YAT!</h3>
+            <h3>NO <strong>BAAH</strong> LANKS YAT!</h3>
         </td>
     </tr>
     @endforelse

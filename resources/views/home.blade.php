@@ -65,7 +65,7 @@
                         Bada lanka hara..
                     @endcomponent
 
-                    @include('link.baah-list', ['links' => $baahLinks])
+                    @include('link.list', ['links' => $baahLinks])
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                         Goodie linki hirii..
                     @endcomponent
 
-                    @include('link.goo-list', ['links' => $gooLinks])
+                    @include('link.list', ['links' => $gooLinks])
                 </div>
             </div>
         </div>
