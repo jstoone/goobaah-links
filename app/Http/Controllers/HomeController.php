@@ -28,7 +28,11 @@ class HomeController extends Controller
         $baahLinks = Link::where('type', Link::TYPE_BAAH)->get();
 
         $totalLinks = Link::count();
-        $linkRating = ($gooLinks->count() / $totalLinks) * 100;
+        $linkRating = 0;
+
+        if ($totalLinks > 0) {
+            $linkRating = ($gooLinks->count() / $totalLinks) * 100;
+        }
 
         return view('home')
             ->with('gooLinks', $gooLinks)

@@ -1,9 +1,9 @@
 <table class="table table-condensed">
-    @foreach($links as $link)
+    @forelse($links as $link)
     <tr>
         <td>
             <strong>
-                L#{{ $link->id }}
+                #{{ $link->id }}
             </strong>
         </td>
         <td>
@@ -12,5 +12,11 @@
             </a>
         </td>
     </tr>
-    @endforeach
+    @empty
+    <tr class="text-center">
+        <td>
+            <h3>NO <strong>BAAH</strong> LANKS YAT!</h3>
+        </td>
+    </tr>
+    @endforelse
 </table>
