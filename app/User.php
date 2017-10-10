@@ -10,13 +10,11 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * Do not guard any values for mass assignment.
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -27,6 +25,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Defines the relationship between a user and its links.
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function links()
+    {
+        return $this->hasMany(Link::class);
+    }
+
+    /**
+     * Automaticcy encrypt password.
+     *
+     * @param string $value
+     */
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
