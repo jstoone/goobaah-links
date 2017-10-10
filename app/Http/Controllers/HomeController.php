@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Link;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $gooLinks = Link::where('type', Link::TYPE_GOO)->get();
+        $baahLinks = Link::where('type', Link::TYPE_BAAH)->get();
+
+        $totalLinks = Link::count();
+        $linkRating = ($gooLinks->count() / $totalLinks) * 100;
+
+        return view('home')
+            ->with('gooLinks', $gooLinks)
+            ->with('baahLinks', $baahLinks)
+            ->with('totalLinks', $totalLinks)
+            ->with('linkRating', $linkRating);
     }
 }

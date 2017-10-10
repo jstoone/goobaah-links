@@ -11,6 +11,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        App\User::truncate();
+
         // Password gets hashed in user model.
         App\User::create([
             'name' => 'Goaty Mc Goatface',
