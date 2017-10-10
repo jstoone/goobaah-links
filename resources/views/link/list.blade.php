@@ -15,7 +15,7 @@
     @empty
     <tr class="text-center">
         <td>
-            <h3>NO <strong>BAAH</strong> LANKS YAT!</h3>
+            <h3>NO <strong>LANKS</strong> YAT!</h3>
         </td>
     </tr>
     @endforelse
