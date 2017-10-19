@@ -34,14 +34,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Link::class);
     }
-
-    /**
-     * Automaticcy encrypt password.
-     *
-     * @param string $value
-     */
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = bcrypt($value);
-    }
 }
