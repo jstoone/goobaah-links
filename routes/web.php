@@ -11,16 +11,19 @@
 |
 */
 
-Route::redirect('/', '/login');
-
-Auth::routes();
-
+// The page of everything
+Route::redirect('/', '/home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('link', 'LinksController')
-    ->except([
-        'index',
-        'show',
-        'edit',
-    ]);
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+// Link routes
+Route::resource('link', 'LinksController')->except(['index', 'show', 'edit']);
 
