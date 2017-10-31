@@ -32,6 +32,7 @@ class HomeController extends Controller
 
         if ($totalLinks > 0) {
             $linkRating = ($gooLinks->count() / $totalLinks) * 100;
+            $linkRating = round($linkRating, 1);
         }
 
         return view('home')
