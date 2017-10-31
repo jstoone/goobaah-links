@@ -15,6 +15,8 @@
                         <h3>LET ZE BATTLE BEGIN!</h3>
                     @elseif($linkRating > 50)
                         <h3>WE ALL GONNA SHIT RAINBOW CAKES!</h3>
+                    @elseif($linkRating == 50)
+                        <h3>LANK BATTÖLL IS EVAN!</h3>
                     @else
                         <h3>WE ALL EATIN' DEPRI-CAKES...</h3>
                     @endif
