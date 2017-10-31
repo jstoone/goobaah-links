@@ -18,6 +18,11 @@ class Link extends Model
     const TYPE_BAAH = 'baah';
 
     /**
+     * Automatically load the following relationships.
+     */
+    protected $with = ['user'];
+
+    /**
      * Do not guard any values for mass assignment.
      *
      * @var array

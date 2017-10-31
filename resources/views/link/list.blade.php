@@ -7,9 +7,15 @@
             </strong>
         </td>
         <td>
-            <a href="{{ $link->path }}">
-                {{ str_limit($link->path, 50) }}
-            </a>
+            <p>
+                <a href="{{ $link->path }}">
+                    {{ str_limit($link->path, 50) }}
+                </a>
+                <span class="pull-right">By {{$link->user->username}}</span>
+            </p>
+            <p>
+                <span>{{$link->created_at}}</span>
+            </p>
         </td>
     </tr>
     @empty
